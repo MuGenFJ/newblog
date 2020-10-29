@@ -23,6 +23,7 @@ const IndexPage = () => (
                   path={node.frontmatter.path}
                   date={node.frontmatter.date}
                   body={node.excerpt}
+                  tags={node.frontmatter.tags}
                 />
               ))}
             </div>
@@ -48,6 +49,7 @@ query MyQuery {
           date(formatString: "MMM Do YYYY")
           path
           title
+          tags
           image {
             childImageSharp {
               fluid(maxWidth: 600) {
