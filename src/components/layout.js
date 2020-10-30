@@ -9,7 +9,7 @@ import React from "react"
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
 
-import Header from "./header"
+import Header from "./Header"
 import Footer from "./Footer"
 import "../styles/index.scss"
 
@@ -26,7 +26,6 @@ const Layout = ({ children }) => {
 
   return (
     <>
-      <link src="https://kit.fontawesome.com/39626ed89f.js" crossOrigin="anonymous" />
       <Header siteTitle={data.site.siteMetadata?.title || `Title`} />
       <div className="container" id="content">
         {children}
