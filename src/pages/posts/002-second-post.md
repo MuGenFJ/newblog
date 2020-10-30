@@ -2,7 +2,6 @@
 title: "Second Post - About"
 date: 2018-12-02 08:00:00
 author: "Maggy Doe"
-path: "/second-post"
 image: ../../images/blog2.jpg
 tags: 
 - news

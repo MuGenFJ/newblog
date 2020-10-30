@@ -5,10 +5,8 @@ import {
   Collapse,
   Navbar,
   NavbarToggler,
-  NavbarBrand,
   Nav,
   NavItem,
-  NavLink,
   NavbarText
 } from 'reactstrap';
 
@@ -23,18 +21,18 @@ const Header = ({ siteTitle }) => {
     <Navbar fixed="top" light expand="sm">
 
       <div className="container">
-        <NavbarBrand><Link to="/">{siteTitle}</Link></NavbarBrand>
+        <Link className="navbar-brand" to="/">{siteTitle}</Link>
         <NavbarToggler onClick={toggle} />
         <Collapse isOpen={isOpen} navbar>
           <Nav className="mr-auto" navbar>
             <NavItem>
-              <NavLink ><Link to="/about">About</Link></NavLink>
+              <Link className="nav-link" to="/about">About</Link>
             </NavItem>
             <NavItem>
-              <NavLink ><Link to="/team">Team</Link></NavLink>
+              <Link className="nav-link" to="/team">Team</Link>
             </NavItem>
             <NavItem>
-              <NavLink ><Link to="/tags">Tags</Link></NavLink>
+              <Link className="nav-link" to="/tags">Tags</Link>
             </NavItem>
           </Nav>
           <NavbarText>Simple Text</NavbarText>

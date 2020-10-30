@@ -2,7 +2,6 @@
 title: "Third Post - The Blog"
 date: 2018-12-03 07:00:00
 author: "John Doe"
-path: "/third-post"
 image: ../../images/blog3.jpg
 tags: 
 - discover

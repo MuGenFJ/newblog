@@ -1,6 +1,6 @@
 import React from "react"
-import Layout from "../components/Layout"
-import SEO from "../components/SEO"
+import Layout from "../components/layout"
+import SEO from "../components/seo"
 import { StaticQuery, graphql } from "gatsby"
 import Post from "../components/Post"
 import { Row, Col } from "reactstrap"
@@ -18,10 +18,11 @@ const IndexPage = () => (
             <div>
               {data.allMarkdownRemark.edges.map(({ node }) => (
                 <Post
+                  key={node.id}
                   title={node.frontmatter.title}
                   thumbnail={node.frontmatter.image.childImageSharp.fluid}
                   author={node.frontmatter.author}
-                  path={node.frontmatter.path}
+                  slug={node.fields.slug}
                   date={node.frontmatter.date}
                   body={node.excerpt}
                   tags={node.frontmatter.tags}
@@ -48,7 +49,6 @@ query MyQuery {
         frontmatter {
           author
           date(formatString: "MMM Do YYYY")
-          path
           title
           tags
           image {
@@ -58,6 +58,9 @@ query MyQuery {
               }
             }
           }
+        }
+        fields {
+          slug
         }
         excerpt
       }
