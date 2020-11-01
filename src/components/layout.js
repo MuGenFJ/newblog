@@ -1,10 +1,3 @@
-/**
- * Layout component that queries for data
- * with Gatsby's useStaticQuery component
- *
- * See: https://www.gatsbyjs.com/docs/use-static-query/
- */
-
 import React from "react"
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
@@ -15,7 +8,7 @@ import Sidebar from "./Sidebar"
 import "../styles/index.scss"
 import { Col, Row } from "reactstrap"
 
-const Layout = ({ children, pageTitle }) => {
+const Layout = ({ authorImageFluid, children, pageTitle, postAuthor }) => {
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
       site {
@@ -36,7 +29,7 @@ const Layout = ({ children, pageTitle }) => {
             {children}
           </Col>
           <Col md="4">
-            <Sidebar />
+            <Sidebar author={postAuthor} authorFluid={authorImageFluid} />
           </Col>
         </Row>
       </div>
